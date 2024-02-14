@@ -1,20 +1,33 @@
 package se.nilden.controller;
 
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import se.nilden.domain.SalonDetails;
+import se.nilden.domain.SalonServiceDetails;
+import se.nilden.service.GetSalonDetails;
+import se.nilden.service.GetSalonServiceDetails;
+
+import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/salon")
+@RequiredArgsConstructor
+@RequestMapping("/api/services")
 public class SalonController {
 
-    /**
-     * Get the salon
-     * @return a welcome message
-     */
-    @GetMapping
-    public String getSalon() {
-        return "Welcome to the Salon!";
+    private final GetSalonServiceDetails getSalonServiceDetails;
+    private final GetSalonDetails getSalonDetails;
+
+
+    @GetMapping("/retrieveSalonDetails")
+    public SalonDetails getSalonDetails() {
+        return getSalonDetails.getSalonDetails();
+    }
+
+    @GetMapping("/retrieveAvailableSalonServices")
+    public List<SalonServiceDetails> getSalon() {
+        return getSalonServiceDetails.getSalonServiceDetails();
     }
 }
