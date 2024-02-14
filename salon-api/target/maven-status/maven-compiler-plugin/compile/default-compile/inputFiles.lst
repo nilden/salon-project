@@ -1,0 +1,7 @@
+/Users/nilden/ideaprojects/manning/salon-api/src/main/java/se/nilden/repository/SalonServiceDetailRepository.java
+/Users/nilden/ideaprojects/manning/salon-api/src/main/java/se/nilden/SalonApiApplication.java
+/Users/nilden/ideaprojects/manning/salon-api/src/main/java/se/nilden/domain/Slot.java
+/Users/nilden/ideaprojects/manning/salon-api/src/main/java/se/nilden/repository/SlotRepository.java
+/Users/nilden/ideaprojects/manning/salon-api/src/main/java/se/nilden/controller/SalonController.java
+/Users/nilden/ideaprojects/manning/salon-api/src/main/java/se/nilden/domain/SalonDetails.java
+/Users/nilden/ideaprojects/manning/salon-api/src/main/java/se/nilden/exception/SalonException.java
