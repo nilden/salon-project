@@ -1,7 +1,0 @@
-se/nilden/repository/SlotRepository.class
-se/nilden/controller/SalonController.class
-se/nilden/exception/SalonException.class
-se/nilden/repository/SalonServiceDetailRepository.class
-se/nilden/SalonApiApplication.class
-se/nilden/domain/SalonDetails.class
-se/nilden/domain/Slot.class
