@@ -1,0 +1,19 @@
+@startuml
+actor Client
+participant "SalonController" as C
+participant "SalonService" as S
+participant "SalonRepositoryImpl" as R
+
+Client -> C: GET /api/services/retrieveAvailableSalonServices
+activate C
+C -> S: getSalonServiceDetails()
+activate S
+S -> R: getSalonServiceDetails()
+activate R
+R --> S: List<SalonServiceDetailsEntity>
+deactivate R
+S --> C: List<SalonServiceDetails>
+deactivate S
+C --> Client: List<SalonServiceDetails>
+deactivate C
+@enduml
