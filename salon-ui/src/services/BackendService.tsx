@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import LoadingIndicator from './LoadingIndicator';
-import { notificationSubject } from './AppNotificationComponent';
+import LoadingIndicator from '../components/LoadingIndicator';
+import { notificationSubject } from '../components/Notifications';
 
 
 interface Service {

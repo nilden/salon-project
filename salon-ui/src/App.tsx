@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import './App.css';
 import { Navbar } from 'react-bootstrap';
 import LoadingIndicator, { loadingSubject } from './components/LoadingIndicator';
-import AppNotificationComponent, { notificationSubject } from './components/AppNotificationComponent';
-import ChoseService from './components/ChoseService';
+import Notifications, { notificationSubject } from './components/Notifications';
+import BackendService from './services/BackendService';
 
 function App() {
 
@@ -31,9 +31,9 @@ function App() {
                 </Navbar.Brand>
             </Navbar>
             <LoadingIndicator />
-            <ChoseService/>
+            <BackendService/>
             <div className="fixed-bottom">
-                <AppNotificationComponent />
+                <Notifications />
             </div>
 
         </div>
