@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
-    <exclude-output />
-    <content url="file://$MODULE_DIR$/salon-ui">
+  <component name="AdditionalModuleElements">
+    <content url="file://$MODULE_DIR$/salon-ui" dumb="true">
       <excludeFolder url="file://$MODULE_DIR$/salon-ui/build" />
     </content>
-    <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="SonarLintModuleSettings">
     <option name="uniqueId" value="14ce5261-0011-4df9-9c84-3ce9f657cbd1" />

@@ -1,7 +1,16 @@
 package se.nilden.controller.dto;
 
-public record SlotDto(Long id, String s, java.time.LocalDateTime localDateTime,
-                      java.util.Set<se.nilden.persistence.entity.SalonServiceDetail> salonServiceDetails,
-                      se.nilden.domain.SlotStatus status, java.time.LocalDateTime dateTime,
-                      java.time.LocalDateTime time) {
+import se.nilden.domain.SlotStatus;
+import se.nilden.persistence.entity.SalonServiceDetail;
+
+import java.time.LocalDateTime;
+import java.util.Set;
+
+public record SlotDto(Long id,
+                      String stylistName,
+                      LocalDateTime lockedAt,
+                      Set<SalonServiceDetail> salonServiceDetails,
+                      SlotStatus status,
+                      LocalDateTime slotFor,
+                      LocalDateTime time) {
 }

@@ -12,8 +12,8 @@ public class SalonService {
 
     private final SalonRepository salonRepository;
 
-    public Optional<SalonServiceDetail> findById(Long slotServiceId) {
+    public Optional<SalonServiceDetail> findById(Long salonServiceId) {
 
-        return salonRepository.findById(slotServiceId);
+        return salonRepository.findById(salonServiceId);
     }
 }

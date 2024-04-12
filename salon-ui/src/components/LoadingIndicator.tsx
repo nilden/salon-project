@@ -19,7 +19,7 @@ const LoadingIndicator = () => {
   if (!isLoading) return null;
 
   return (
-    <div className="position-fixed top-0 start-0 w-100">
+    <div className="position-fixed bottom-0 start-0 w-100">
       <div className="progress" style={{ height: '4px' }}>
         <div className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style={{ width: '100%' }}></div>
       </div>

@@ -41,11 +41,11 @@ public class SalonController {
                 .toList();
     }
 
-    @GetMapping("/retrieveAvailableSlots/{slotServiceId}/{formattedDate}")
-    public List<SlotDto> retrieveAvailableSlots(@PathVariable("slotServiceId") Long slotServiceId,
+    @GetMapping("/retrieveAvailableSlots/{salonServiceId}/{formattedDate}")
+    public List<SlotDto> retrieveAvailableSlots(@PathVariable("salonServiceId") Long salonServiceId,
                                              @PathVariable("formattedDate") String formattedDate) {
-        return getAvailabilitySlots.retrieveAvailableSlots(slotServiceId, formattedDate).stream()
-                .map(slot -> new SlotDto(slot.id(), slot.stylistName(), slot.slotFor(), slot.availableServices(), slot.status(), slot.lockedAt(), slot.confirmedAt()))
+        return getAvailabilitySlots.retrieveAvailableSlots(salonServiceId, formattedDate).stream()
+                .map(slot -> new SlotDto(slot.id(), slot.stylistName(), slot.lockedAt(), slot.availableServices(), slot.status(), slot.slotFor(), slot.confirmedAt()))
                 .toList();
     }
 }

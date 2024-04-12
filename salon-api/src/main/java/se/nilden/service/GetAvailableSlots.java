@@ -11,7 +11,6 @@ import se.nilden.persistence.entity.SlotStatus;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Getter
@@ -23,19 +22,18 @@ public class GetAvailableSlots {
     private final SalonRepository salonRepository;
     private final SalonService salonService;
 
-    public List<Slot> retrieveAvailableSlots(Long slotServiceId, String formattedDate) {
-        SalonServiceDetail salonServiceDetail = salonService.findById(slotServiceId).orElseThrow(() -> new RuntimeException("Invalid Service"));
+    public List<Slot> retrieveAvailableSlots(Long salonServiceId, String formattedDate) {
+        SalonServiceDetail salonServiceDetail = salonService.findById(salonServiceId).orElseThrow(() -> new RuntimeException("Invalid Service"));
         LocalDate localDate = getAsDate(formattedDate);
 
         LocalDateTime startDate = localDate.atTime(0, 1);
         LocalDateTime endDate = localDate.atTime(23, 59);
-        log.info("Querying for " + slotServiceId + " From " + startDate + " to " + endDate);
+        log.info("Querying for {} from {} to {}", salonServiceDetail.getName(), startDate, endDate);
 
         return salonRepository.findAvailableSlotsByServiceIdAndDate(startDate, endDate, salonServiceDetail, SlotStatus.AVAILABLE);
     }
 
     public LocalDate getAsDate(String formattedDate) {
-        DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
-        return LocalDateTime.parse(formattedDate, formatter).toLocalDate();
+       return LocalDate.parse(formattedDate);
     }
 }
